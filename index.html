@@ -1,31 +1,165 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Aditya Mukerjee's Personal Profile</title>
-        <style>
-            body {
-                background-color : rgb(190, 0, 0);
-            }
-            h1 {
-                text-align:center;
-                color: rgb(255, 255, 255);
-            }
-            p {
-               color: rgb(255, 255, 255); 
-            }
-        </style>
-    </head>
-    <body>
-        <h1>
-            <a href="https://github.com/ForkBombRaja">ForkBombRaja</a>
-        </h1>
-        <p>
-        Hello, my name is Aditya Mukerjee. Welcome to my Github! I am a Computer Scientist who is currently open to work!
-        </p>
-        <ul>
-        <li><a href="https://adityamukerjee.substack.com/">Substack         </a></li>
-        <li><a href="https://x.com/Fork_Bomb_Raja">Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/aditya-mukerjee-alex/?skipRedirect=true">Linkedin</a></li>
-        </ul>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Mukerjee</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: rgba(255,255,255,.07);
+      --border: rgba(255,255,255,.12);
+      --text: #f5f7fb;
+      --muted: #a7adba;
+      --accent: #7c5cff;
+      --accent2: #25c2a0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 20px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(124,92,255,.22), transparent 32%),
+        radial-gradient(circle at 85% 90%, rgba(37,194,160,.16), transparent 30%),
+        var(--bg);
+    }
+
+    .card {
+      width: min(760px, 100%);
+      padding: 52px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 80px rgba(0,0,0,.42);
+      backdrop-filter: blur(18px);
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 28px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px dashed rgba(255,255,255,.28);
+      border-radius: 50%;
+      color: var(--muted);
+      background: rgba(255,255,255,.045);
+      font-size: 14px;
+    }
+
+    /* To use your own photo, replace the contents of .photo with:
+       <img src="your-photo.jpg" alt="Aditya Mukerjee"> */
+    .photo::before {
+      content: <img src="portrait.jpg" alt="Aditya Mukerjee">;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .subtitle {
+      margin: 16px 0 38px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 18px;
+      text-align: left;
+    }
+
+    .column {
+      display: grid;
+      gap: 14px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 19px;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,.045);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .link:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.09);
+      border-color: rgba(124,92,255,.55);
+    }
+
+    .label {
+      font-weight: 650;
+      letter-spacing: -.01em;
+    }
+
+    .arrow {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .note {
+      margin-top: 30px;
+      color: #777e8c;
+      font-size: .82rem;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 36px 22px; }
+      .links { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="photo" aria-label="Profile photo placeholder"></div>
+
+    <h1>Aditya Mukerjee</h1>
+    <p class="subtitle">Welcome to my corner of the internet.</p>
+
+    <section class="links" aria-label="Social links">
+      <div class="column">
+        <a class="link" href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+          <span class="label">Facebook</span><span class="arrow">↗</span>
+        </a>
+        <a class="link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+          <span class="label">Twitter / X</span><span class="arrow">↗</span>
+        </a>
+        <a class="link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <span class="label">LinkedIn</span><span class="arrow">↗</span>
+        </a>
+      </div>
+
+      <div class="column">
+        <a class="link" href="https://substack.com/" target="_blank" rel="noopener noreferrer">
+          <span class="label">Substack</span><span class="arrow">↗</span>
+        </a>
+        <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <span class="label">GitHub</span><span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="note">Replace the placeholder URLs with your profile links.</p>
+  </main>
+</body>
 </html>
